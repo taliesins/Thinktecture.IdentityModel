@@ -68,7 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tokens\ClaimMappings.cs" />
     <Compile Include="Tokens\GenericUserNameSecurityTokenHandler.cs" />
+    <Compile Include="Tokens\HeaderEncoding.cs" />
     <Compile Include="Tokens\HmacSigningCredentials.cs" />
+    <Compile Include="Tokens\HttpSaml2SecurityTokenHandler.cs" />
+    <Compile Include="Tokens\HttpSamlSecurityTokenHandler.cs" />
     <Compile Include="Tokens\SimpleSecurityToken.cs" />
     <Compile Include="Tokens\SimpleSecurityTokenHandler.cs" />
     <Compile Include="Tokens\TestIssuerNameRegistry.cs" />
