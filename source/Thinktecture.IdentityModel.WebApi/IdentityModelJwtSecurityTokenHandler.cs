@@ -10,13 +10,16 @@ using System.Security.Claims;
 
 namespace Thinktecture.IdentityModel.Tokens
 {
-    class IdentityModelJwtSecurityTokenHandler : JwtSecurityTokenHandler
+    public class IdentityModelJwtSecurityTokenHandler : JwtSecurityTokenHandler
     {
-        TokenValidationParameters validationParams;
+        TokenValidationParameters _validationParams;
+
+        public IdentityModelJwtSecurityTokenHandler() : base()
+        { }
 
         public IdentityModelJwtSecurityTokenHandler(TokenValidationParameters validationParams, Dictionary<string, string> inboundClaimTypeMap = null)
         {
-            this.validationParams = validationParams;
+            _validationParams = validationParams;
 
             if (inboundClaimTypeMap != null)
             {
@@ -26,9 +29,16 @@ namespace Thinktecture.IdentityModel.Tokens
 
         public override ReadOnlyCollection<ClaimsIdentity> ValidateToken(SecurityToken token)
         {
-            var jwt = token as JwtSecurityToken;
-            var list = new List<ClaimsIdentity>(this.ValidateToken(jwt, validationParams).Identities);
-            return list.AsReadOnly();
+            if (_validationParams != null)
+            {
+                var jwt = token as JwtSecurityToken;
+                var list = new List<ClaimsIdentity>(this.ValidateToken(jwt, _validationParams).Identities);
+                return list.AsReadOnly();
+            }
+            else
+            {
+                return base.ValidateToken(token);
+            }
         }
     }
 }
