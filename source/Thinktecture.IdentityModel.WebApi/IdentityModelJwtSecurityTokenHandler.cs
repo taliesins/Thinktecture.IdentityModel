@@ -6,7 +6,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IdentityModel.Tokens;
+using System.IO;
 using System.Security.Claims;
+using System.Xml;
 
 namespace Thinktecture.IdentityModel.Tokens
 {
@@ -39,6 +41,16 @@ namespace Thinktecture.IdentityModel.Tokens
             {
                 return base.ValidateToken(token);
             }
+        }
+
+        public override SecurityToken ReadToken(string jwtEncodedString)
+        {
+            if (jwtEncodedString.StartsWith("<"))
+            {
+                return base.ReadToken(new XmlTextReader(new StringReader(jwtEncodedString)));
+            }
+
+            return base.ReadToken(jwtEncodedString);
         }
     }
 }
