@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using Thinktecture.IdentityModel.Metadata;
 
-namespace Thinktecture.IdentityModel.Tokens
+namespace Thinktecture.IdentityModel.Metadata
 {
     public class CachingMetadataBasedIssuerNameRegistry : MetadataBasedIssuerNameRegistry
     {

@@ -15,7 +15,7 @@ using System.ServiceModel.Security;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Thinktecture.IdentityModel.Tokens
+namespace Thinktecture.IdentityModel.Metadata
 {
     public class MetadataBasedIssuerNameRegistry : IssuerNameRegistry
     {

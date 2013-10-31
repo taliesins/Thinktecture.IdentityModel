@@ -77,7 +77,7 @@
     <Compile Include="Tokens\HttpSamlSecurityTokenHandler.cs" />
     <Compile Include="Metadata\FileBasedMetadataCache.cs" />
     <Compile Include="Metadata\IMetadataCache.cs" />
-    <Compile Include="Tokens\MetadataBasedIssuerNameRegistry.cs" />
+    <Compile Include="Metadata\MetadataBasedIssuerNameRegistry.cs" />
     <Compile Include="Tokens\SimpleSecurityToken.cs" />
     <Compile Include="Tokens\SimpleSecurityTokenHandler.cs" />
     <Compile Include="Tokens\TestIssuerNameRegistry.cs" />

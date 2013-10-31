@@ -7,7 +7,7 @@ using System;
 using System.Web.Security;
 using Thinktecture.IdentityModel.Metadata;
 
-namespace Thinktecture.IdentityModel.Tokens
+namespace Thinktecture.IdentityModel.Metadata
 {
     class MachineKeyMetadataCache : IMetadataCache
     {
