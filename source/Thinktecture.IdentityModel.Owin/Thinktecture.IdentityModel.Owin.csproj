@@ -65,7 +65,7 @@
   <ItemGroup>
     <Compile Include="AppBuilderExtensions\SamlBearerAuthenticationExtensions.cs" />
     <Compile Include="ClaimsTransformationMiddleware.cs" />
-    <Compile Include="ClaimsTransformationMiddlewareExtensions.cs" />
+    <Compile Include="AppBuilderExtensions\ClaimsTransformationMiddlewareExtensions.cs" />
     <Compile Include="ClaimsTransformationOptions.cs" />
     <Compile Include="HeaderOAuthBearerProvider.cs" />
     <Compile Include="AppBuilderExtensions\IdentityModelJwtBearerAuthenticationExtensions.cs" />

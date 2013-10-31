@@ -12,7 +12,7 @@ namespace Thinktecture.IdentityModel.Owin
             _name = name;
         }
 
-        public override async Task RequestToken(OAuthRequestTokenContext context)
+        public override Task RequestToken(OAuthRequestTokenContext context)
         {
             var value = context.Request.Query.Get(_name);
 
@@ -20,6 +20,8 @@ namespace Thinktecture.IdentityModel.Owin
             {
                 context.Token = value;
             }
+
+            return Task.FromResult<object>(null);
         }
     }
 }
