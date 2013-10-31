@@ -31,8 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +74,9 @@
     <Compile Include="Tokens\HmacSigningCredentials.cs" />
     <Compile Include="Tokens\HttpSaml2SecurityTokenHandler.cs" />
     <Compile Include="Tokens\HttpSamlSecurityTokenHandler.cs" />
+    <Compile Include="Tokens\IssuerNameRegistry\FileBasedMetadataCache.cs" />
+    <Compile Include="Tokens\IssuerNameRegistry\IMetadataCache.cs" />
+    <Compile Include="Tokens\IssuerNameRegistry\MetadataBasedIssuerNameRegistry.cs" />
     <Compile Include="Tokens\SimpleSecurityToken.cs" />
     <Compile Include="Tokens\SimpleSecurityTokenHandler.cs" />
     <Compile Include="Tokens\TestIssuerNameRegistry.cs" />
