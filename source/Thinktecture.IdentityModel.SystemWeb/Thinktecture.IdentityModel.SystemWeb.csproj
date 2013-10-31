@@ -74,6 +74,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\AppStart.cs" />
+    <Compile Include="Configuration\SecuritySessionSection.cs" />
+    <Compile Include="Configuration\SessionConfiguration.cs" />
+    <Compile Include="Configuration\SessionConfigurationModule.cs" />
+    <Compile Include="FrameOptionsAttribute.cs" />
     <Compile Include="ITokenCacheRepository.cs" />
     <Compile Include="Metadata\CachingMetadataBasedIssuerNameRegistry.cs" />
     <Compile Include="ClaimsAuthorizeAttribute.cs" />
