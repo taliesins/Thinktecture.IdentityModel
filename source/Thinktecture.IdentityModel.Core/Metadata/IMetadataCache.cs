@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Thinktecture.IdentityModel.Tokens
+namespace Thinktecture.IdentityModel.Metadata
 {
     public interface IMetadataCache
     {

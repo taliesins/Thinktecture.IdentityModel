@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
-namespace Thinktecture.IdentityModel.Tokens
+namespace Thinktecture.IdentityModel.Metadata
 {
     public class FileBasedMetadataCache : IMetadataCache, ICustomIdentityConfiguration
     {

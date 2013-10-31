@@ -64,6 +64,7 @@
     <Compile Include="Extensions\XmlExtensions\XmlDocumentExtensions.cs" />
     <Compile Include="Extensions\XmlExtensions\XmlElementExtensions.cs" />
     <Compile Include="Extensions\XmlExtensions\XmlReaderExtensions.cs" />
+    <Compile Include="Metadata\FederationMetadata.cs" />
     <Compile Include="KeyGenerator.cs" />
     <Compile Include="ObfuscatingComparer.cs" />
     <Compile Include="Principal.cs" />
@@ -74,9 +75,9 @@
     <Compile Include="Tokens\HmacSigningCredentials.cs" />
     <Compile Include="Tokens\HttpSaml2SecurityTokenHandler.cs" />
     <Compile Include="Tokens\HttpSamlSecurityTokenHandler.cs" />
-    <Compile Include="Tokens\IssuerNameRegistry\FileBasedMetadataCache.cs" />
-    <Compile Include="Tokens\IssuerNameRegistry\IMetadataCache.cs" />
-    <Compile Include="Tokens\IssuerNameRegistry\MetadataBasedIssuerNameRegistry.cs" />
+    <Compile Include="Metadata\FileBasedMetadataCache.cs" />
+    <Compile Include="Metadata\IMetadataCache.cs" />
+    <Compile Include="Tokens\MetadataBasedIssuerNameRegistry.cs" />
     <Compile Include="Tokens\SimpleSecurityToken.cs" />
     <Compile Include="Tokens\SimpleSecurityTokenHandler.cs" />
     <Compile Include="Tokens\TestIssuerNameRegistry.cs" />
