@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>1.0.0-alpha1</version>
+    <authors>Dominick Baier, Brock Allen</authors>
+    <owners>Dominick Baier, Brock Allen</owners>
+    <copyright>Dominick Baier, Brock Allen 2013</copyright>
+
+    <id>Thinktecture.IdentityModel.WCF</id>
+    <title>Thinktecture.IdentityModel.WCF</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <description>WS-Trust helpers and bindings for WCF</description>
+    <summary>WS-Trust helpers and bindings for WCF</summary>
+    
+    <projectUrl>https://github.com/thinktecture/Thinktecture.IdentityModel</projectUrl>
+    <iconUrl>http://1.gravatar.com/blavatar/3b437c799e12e32beb1d8cfda1199ab3?s=32</iconUrl>
+
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.IdentityModel" targetFramework="net45" />
+    </frameworkAssemblies>
+
+    <dependencies>
+      <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0" />
+    </dependencies>
+    
+    <language>en-US</language>
+    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control WCF WS-Trust</tags>
+  </metadata>
+</package>
