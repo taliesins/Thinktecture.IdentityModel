@@ -10,7 +10,7 @@ using System.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public class BasicAuthenticationSecurityTokenHandler : UserNameSecurityTokenHandler
     {

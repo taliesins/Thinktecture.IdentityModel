@@ -9,7 +9,7 @@ using System.IdentityModel.Tokens;
 using System.Linq;
 using System.Security.Claims;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public class AuthenticationConfiguration
     {

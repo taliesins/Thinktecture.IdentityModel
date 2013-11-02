@@ -4,7 +4,7 @@
  */
 
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public class AuthenticationOptions
     {

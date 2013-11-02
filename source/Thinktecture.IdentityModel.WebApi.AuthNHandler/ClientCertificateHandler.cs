@@ -8,7 +8,7 @@ using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
 using System.ServiceModel.Security;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public class ClientCertificateHandler : X509SecurityTokenHandler
     {

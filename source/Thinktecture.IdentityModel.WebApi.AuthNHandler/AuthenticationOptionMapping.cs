@@ -5,7 +5,7 @@
 
 using System.IdentityModel.Tokens;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public class AuthenticationOptionMapping
     {

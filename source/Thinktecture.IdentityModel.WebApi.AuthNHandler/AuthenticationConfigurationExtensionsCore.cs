@@ -12,7 +12,7 @@ using System.ServiceModel.Security.Tokens;
 using Thinktecture.IdentityModel.Constants;
 using Thinktecture.IdentityModel.Tokens;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public static class AuthenticationConfigurationExtensionsCore
     {
@@ -35,10 +35,10 @@ namespace Thinktecture.IdentityModel.WebApi.Authentication
         }
 
         public static void AddJsonWebToken(
-            this AuthenticationConfiguration configuration, 
-            string issuer, 
-            string audience, 
-            string signingKey, 
+            this AuthenticationConfiguration configuration,
+            string issuer,
+            string audience,
+            string signingKey,
             Dictionary<string, string> claimMappings = null)
         {
             var validationParameters = new TokenValidationParameters()
@@ -78,10 +78,10 @@ namespace Thinktecture.IdentityModel.WebApi.Authentication
         }
 
         public static void AddJsonWebToken(
-            this AuthenticationConfiguration configuration, 
-            string issuer, 
-            string audience, 
-            X509Certificate2 signingCertificate, 
+            this AuthenticationConfiguration configuration,
+            string issuer,
+            string audience,
+            X509Certificate2 signingCertificate,
             Dictionary<string, string> claimMappings = null)
         {
             var validationParameters = new TokenValidationParameters()
@@ -121,7 +121,7 @@ namespace Thinktecture.IdentityModel.WebApi.Authentication
         }
 
         public static void AddJsonWebToken(
-            this AuthenticationConfiguration configuration, 
+            this AuthenticationConfiguration configuration,
             TokenValidationParameters validationParameters,
             AuthenticationOptions options,
             AuthenticationScheme scheme,
@@ -233,29 +233,5 @@ namespace Thinktecture.IdentityModel.WebApi.Authentication
                 Options = options
             });
         }
-
-        // todo: think about integration strategy
-        //public static void AddHawkAuthentication(this AuthenticationConfiguration configuration, Func<string, Credential> credentialsCallback, bool allowBewit = false, Func<HttpResponseMessage, string> normalizationCallback = null, Func<HttpRequestMessage, string, bool> verificationCallback = null)
-        //{
-        //    var handler = new HawkSecurityTokenHandler(
-        //                    new HawkAuthenticationHandler(credentialsCallback,
-        //                                                    normalizationCallback, verificationCallback));
-
-        //    configuration.AddMapping(new AuthenticationOptionMapping
-        //    {
-        //        TokenHandler = new SecurityTokenHandlerCollection { handler },
-        //        Options = AuthenticationOptions.ForAuthorizationHeader(scheme: "hawk"),
-        //        Scheme = AuthenticationScheme.SchemeOnly("hawk")
-        //    });
-
-        //    if (allowBewit)
-        //    {
-        //        configuration.AddMapping(new AuthenticationOptionMapping
-        //        {
-        //            TokenHandler = new SecurityTokenHandlerCollection { handler },
-        //            Options = AuthenticationOptions.ForQueryString("bewit")
-        //        });
-        //    }
-        //}
     }
 }

@@ -7,7 +7,7 @@ using System;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public class BasicAuthenticationHeaderValue : AuthenticationHeaderValue
     {

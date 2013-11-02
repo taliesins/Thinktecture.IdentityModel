@@ -17,7 +17,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel.Security.Tokens;
 using Thinktecture.IdentityModel.Tokens;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     public class HttpAuthentication
     {

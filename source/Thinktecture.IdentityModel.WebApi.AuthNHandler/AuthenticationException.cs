@@ -6,7 +6,7 @@
 using System;
 using System.Net;
 
-namespace Thinktecture.IdentityModel.WebApi.Authentication
+namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
 {
     [Serializable]
     public class AuthenticationException : Exception
