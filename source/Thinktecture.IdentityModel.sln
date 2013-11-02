@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityModel.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityModel.SystemWeb", "Thinktecture.IdentityModel.SystemWeb\Thinktecture.IdentityModel.SystemWeb.csproj", "{976EBA28-8B93-4BB6-A7A5-64350FCC1824}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityModel.WebApi.AuthNHandler", "Thinktecture.IdentityModel.WebApi.AuthNHandler\Thinktecture.IdentityModel.WebApi.AuthNHandler.csproj", "{4FBEE49E-C5CB-4CAE-A770-E6B2459AAB86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{976EBA28-8B93-4BB6-A7A5-64350FCC1824}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{976EBA28-8B93-4BB6-A7A5-64350FCC1824}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{976EBA28-8B93-4BB6-A7A5-64350FCC1824}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBEE49E-C5CB-4CAE-A770-E6B2459AAB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBEE49E-C5CB-4CAE-A770-E6B2459AAB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBEE49E-C5CB-4CAE-A770-E6B2459AAB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBEE49E-C5CB-4CAE-A770-E6B2459AAB86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
