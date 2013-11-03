@@ -21,3 +21,6 @@ cd ..
 cd WebAPI.AuthenticationHandler
 call NugetPack.cmd
 
+cd ..
+cd Hawk
+call NugetPack.cmd
