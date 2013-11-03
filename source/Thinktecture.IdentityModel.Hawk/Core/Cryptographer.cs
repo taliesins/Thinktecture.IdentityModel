@@ -29,9 +29,9 @@ namespace Thinktecture.IdentityModel.Hawk.Core
         /// sent in by the client (ArtifactsContainer.Mac) and if a payload hash is present,
         /// it matches the hash computed for the normalized payload as well.
         /// </summary>
-        internal bool IsSignatureValid(string body = null, string contentType = null)
+        internal bool IsSignatureValid(string body = null, string contentType = null, bool isServerAuthorization = false)
         {
-            return this.IsMacValid() && (this.IsHashNotPresent() || this.IsHashValid(body, contentType));
+            return this.IsMacValid(isServerAuthorization) && (this.IsHashNotPresent() || this.IsHashValid(body, contentType));
         }
 
         /// <summary>
@@ -59,8 +59,9 @@ namespace Thinktecture.IdentityModel.Hawk.Core
             Tracing.Verbose("Normalized request: " + Encoding.UTF8.GetString(normalizedRequest));
         }
 
-        private bool IsMacValid()
+        private bool IsMacValid(bool isServerAuthorization = false)
         {
+            this.normalizedRequest.IsServerAuthorization = isServerAuthorization;
             byte[] data = this.normalizedRequest.ToBytes();
             // data, at this point has the hash coming in over the wire and hence mac computed is
             // based on the hash over the wire and not over the computed hash

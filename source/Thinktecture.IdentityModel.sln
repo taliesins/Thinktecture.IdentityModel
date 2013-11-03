@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityModel.Core", "Thinktecture.IdentityModel.Core\Thinktecture.IdentityModel.Core.csproj", "{7FAD936F-3F5C-4D31-B733-0B76AE4D1034}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityModel.Client", "Thinktecture.IdentityModel.Client\Thinktecture.IdentityModel.Client.csproj", "{A9CC834E-BB74-4BBA-BA8F-3297011BAA0F}"
@@ -22,6 +20,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityModel.SystemWeb", "Thinktecture.IdentityModel.SystemWeb\Thinktecture.IdentityModel.SystemWeb.csproj", "{976EBA28-8B93-4BB6-A7A5-64350FCC1824}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thinktecture.IdentityModel.WebApi.AuthNHandler", "Thinktecture.IdentityModel.WebApi.AuthNHandler\Thinktecture.IdentityModel.WebApi.AuthNHandler.csproj", "{4FBEE49E-C5CB-4CAE-A770-E6B2459AAB86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FA6D6158-48BD-409E-959C-18A89E807314}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
