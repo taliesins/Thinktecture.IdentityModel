@@ -23,6 +23,7 @@ namespace Thinktecture.IdentityModel.Hawk.Core
     {
         private const string REQUEST_PREAMBLE = HawkConstants.Scheme + "." + HawkConstants.Version + ".header"; // hawk.1.header
         private const string BEWIT_PREAMBLE = HawkConstants.Scheme + "." + HawkConstants.Version + ".bewit"; // hawk.1.bewit
+        private const string RESPONSE_PREAMBLE = HawkConstants.Scheme + "." + HawkConstants.Version + ".response"; // hawk.1.response
 
         private const string HTTP_PORT = "80";
         private const string HTTPS_PORT = "443";
@@ -31,7 +32,7 @@ namespace Thinktecture.IdentityModel.Hawk.Core
         private const string XFF_HEADER_NAME = "X-Forwarded-For";
 
         private readonly ArtifactsContainer artifacts = null;
-        
+
         private readonly string method = null;
         private readonly string path = null;
         private readonly string hostName = null;
@@ -43,7 +44,7 @@ namespace Thinktecture.IdentityModel.Hawk.Core
 
             // Determine host and port - take the host name from X-Forwarded-For header, if present, or from
             // the Host header, if present, or from the HttpRequestMessage object. For bewit, it is always from URI.
-            string firstPreference = IsBewit? null : request.ForwardedFor;
+            string firstPreference = IsBewit ? null : request.ForwardedFor;
             string secondPreference = IsBewit ? null : request.Host;
 
             this.hostName = this.GetHostName(firstPreference, out this.port) ??
@@ -63,13 +64,18 @@ namespace Thinktecture.IdentityModel.Hawk.Core
         internal bool IsBewit { get; set; }
 
         /// <summary>
+        /// Set to true, if this instance is for server authorization response.
+        /// </summary>
+        internal bool IsServerAuthorization { get; set; }
+
+        /// <summary>
         /// Returns the normalized request string.
         /// </summary>
         public override string ToString()
         {
             StringBuilder result = new StringBuilder();
             result
-                .AppendNewLine(this.IsBewit ? BEWIT_PREAMBLE : REQUEST_PREAMBLE)
+                .AppendNewLine(this.GetPreamble())
                 .AppendNewLine(artifacts.Timestamp.ToString())
                 .AppendNewLine(artifacts.Nonce)
                 .AppendNewLine(this.method)
@@ -111,6 +117,17 @@ namespace Thinktecture.IdentityModel.Hawk.Core
 
             port = null;
             return null;
+        }
+
+        private string GetPreamble()
+        {
+            string preamble = REQUEST_PREAMBLE;
+            if (this.IsBewit)
+                preamble = BEWIT_PREAMBLE;
+            else if (this.IsServerAuthorization)
+                preamble = RESPONSE_PREAMBLE;
+
+            return preamble;
         }
     }
 }

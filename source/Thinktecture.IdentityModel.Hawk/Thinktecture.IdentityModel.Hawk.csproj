@@ -67,9 +67,9 @@
     <Compile Include="Core\Extensions\StringExtension.cs" />
     <Compile Include="Core\HawkSchemeHeader.cs" />
     <Compile Include="Core\HawkServer.cs" />
-    <Compile Include="Helpers\Hasher.cs" />
-    <Compile Include="Helpers\HawkConstants.cs" />
-    <Compile Include="Helpers\NonceGenerator.cs" />
+    <Compile Include="Core\Helpers\Hasher.cs" />
+    <Compile Include="Core\Helpers\HawkConstants.cs" />
+    <Compile Include="Core\Helpers\NonceGenerator.cs" />
     <Compile Include="Core\MessageContracts\IMessage.cs" />
     <Compile Include="Core\MessageContracts\IRequestMessage.cs" />
     <Compile Include="Core\MessageContracts\IResponseMessage.cs" />
