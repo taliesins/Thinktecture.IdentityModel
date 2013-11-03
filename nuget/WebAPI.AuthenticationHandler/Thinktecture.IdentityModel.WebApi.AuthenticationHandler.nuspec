@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0-beta1</version>
+    <version>1.0.0-beta2</version>
     <authors>Dominick Baier, Brock Allen</authors>
     <owners>Dominick Baier, Brock Allen</owners>
     <copyright>Dominick Baier, Brock Allen 2013</copyright>
@@ -18,7 +18,7 @@
     </dependencies>
     
     <id>Thinktecture.IdentityModel.WebApi.AuthenticationHandler</id>
-    <title>Thinktecture.IdentityModel.AuthenticationHandler</title>
+    <title>Thinktecture.IdentityModel.WebApi.AuthenticationHandler</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     
     <description>Delegation Handler based Authentication Framework for ASP.NET Web API v2.</description>
