@@ -43,11 +43,7 @@ namespace Thinktecture.IdentityModel.Hawk.WebApi
 
                 if (principal != null && principal.Identity.IsAuthenticated)
                 {
-                    Thread.CurrentPrincipal = principal;
-
-                    if (HttpContext.Current != null)
-                        HttpContext.Current.User = principal;
-
+                    request.GetRequestContext().Principal = principal;
                     Tracing.Verbose("Authentication Successful and principal set for " + principal.Identity.Name);
                 }
 
