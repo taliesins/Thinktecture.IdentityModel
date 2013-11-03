@@ -12,15 +12,19 @@
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.IdentityModel" targetFramework="net45" />
     </frameworkAssemblies>
+
+    <dependencies>
+      <dependency id="Thinktecture.IdentityModel.WebApi" version="1.0.0-beta1" />
+    </dependencies>
     
-    <id>Thinktecture.IdentityModel.Core</id>
-    <title>Thinktecture.IdentityModel.Core</title>
+    <id>Thinktecture.IdentityModel.WebApi.AuthenticationHandler</id>
+    <title>Thinktecture.IdentityModel.AuthenticationHandler</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     
-    <description>Helper library for claims based identity &amp; access control in .NET.</description>
-    <summary>Helper library for claims based identity &amp; access control in .NET.</summary>
+    <description>Delegation Handler based Authentication Framework for ASP.NET Web API v2.</description>
+    <summary>Delegation Handler based Authentication Framework for ASP.NET Web API v2.</summary>
     
     <language>en-US</language>
-    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control</tags>
+    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control WebAPI Web API OAuth2 Basic Authentication Client Certificates API Keys</tags>
   </metadata>
 </package>

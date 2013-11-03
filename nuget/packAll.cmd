@@ -12,3 +12,12 @@ call NugetPack.cmd
 cd ..
 cd WCF
 call NugetPack.cmd
+
+cd ..
+cd WebAPI
+call NugetPack.cmd
+
+cd ..
+cd WebAPI.AuthenticationHandler
+call NugetPack.cmd
+

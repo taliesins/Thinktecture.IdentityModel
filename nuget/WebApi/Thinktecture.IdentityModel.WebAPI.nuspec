@@ -12,15 +12,21 @@
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.IdentityModel" targetFramework="net45" />
     </frameworkAssemblies>
+
+    <dependencies>
+      <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0-beta1" />
+      <dependency id="System.IdentityModel.Tokens.Jwt" version="1.0.0" />
+      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.0.0" />
+    </dependencies>
     
-    <id>Thinktecture.IdentityModel.Core</id>
-    <title>Thinktecture.IdentityModel.Core</title>
+    <id>Thinktecture.IdentityModel.WebApi</id>
+    <title>Thinktecture.IdentityModel.WebApi</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     
-    <description>Helper library for claims based identity &amp; access control in .NET.</description>
-    <summary>Helper library for claims based identity &amp; access control in .NET.</summary>
+    <description>Helper library for claims based identity &amp; access control in ASP.NET Web API v2.</description>
+    <summary>Helper library for claims based identity &amp; access control in ASP.NET Web API v2.</summary>
     
     <language>en-US</language>
-    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control</tags>
+    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control WebAPI Web API OAuth2</tags>
   </metadata>
 </package>
