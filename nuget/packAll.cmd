@@ -24,3 +24,7 @@ call NugetPack.cmd
 cd ..
 cd Hawk
 call NugetPack.cmd
+
+cd ..
+cd SystemWeb
+call NugetPack.cmd

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0-beta2</version>
+    <version>1.0.0-beta1</version>
     <authors>Dominick Baier, Brock Allen</authors>
     <owners>Dominick Baier, Brock Allen</owners>
     <copyright>Dominick Baier, Brock Allen 2013</copyright>
@@ -15,18 +15,16 @@
 
     <dependencies>
       <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0-beta1" />
-      <dependency id="System.IdentityModel.Tokens.Jwt" version="1.0.0" />
-      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.0.0" />
     </dependencies>
     
-    <id>Thinktecture.IdentityModel.WebApi</id>
-    <title>Thinktecture.IdentityModel.WebApi</title>
+    <id>Thinktecture.IdentityModel.SystemWeb</id>
+    <title>Thinktecture.IdentityModel.SystemWeb</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     
-    <description>Helper library for claims based identity &amp; access control in ASP.NET Web API v2.</description>
-    <summary>Helper library for claims based identity &amp; access control in ASP.NET Web API v2.</summary>
+    <description>Helper library for claims based identity &amp; access control in ASP.NET and MVC5.</description>
+    <summary>Helper library for claims based identity &amp; access control in ASP.NET and MVC5.</summary>
     
     <language>en-US</language>
-    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control WebAPI Web API OAuth2</tags>
+    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control</tags>
   </metadata>
 </package>
