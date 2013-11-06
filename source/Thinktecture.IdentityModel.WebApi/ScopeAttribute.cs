@@ -34,7 +34,8 @@ namespace Thinktecture.IdentityModel.WebApi
 
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
-            var grantedScopes = ClaimsPrincipal.Current.FindAll(_scopeClaimType).Select(c => c.Value).ToList();
+            var principal = actionContext.ControllerContext.RequestContext.Principal as ClaimsPrincipal;
+            var grantedScopes = principal.FindAll(_scopeClaimType).Select(c => c.Value).ToList();
 
             foreach (var scope in _scopes)
             {

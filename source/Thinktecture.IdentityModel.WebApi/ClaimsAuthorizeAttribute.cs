@@ -3,6 +3,7 @@
  * see LICENSE
  */
 
+using System.Security.Claims;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 
@@ -26,6 +27,7 @@ namespace Thinktecture.IdentityModel.WebApi
         {
             if (!string.IsNullOrWhiteSpace(_action))
             {
+                var principal = actionContext.ControllerContext.RequestContext.Principal as ClaimsPrincipal;
                 return ClaimsAuthorization.CheckAccess(_action, _resources);
             }
             else
@@ -38,8 +40,10 @@ namespace Thinktecture.IdentityModel.WebApi
         {
             var action = actionContext.ActionDescriptor.ActionName;
             var resource = actionContext.ControllerContext.ControllerDescriptor.ControllerName;
+            var principal = actionContext.ControllerContext.RequestContext.Principal as ClaimsPrincipal;
 
             return ClaimsAuthorization.CheckAccess(
+                principal,
                 action,
                 resource);
         }
