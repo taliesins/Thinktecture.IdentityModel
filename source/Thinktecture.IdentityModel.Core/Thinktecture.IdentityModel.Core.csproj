@@ -69,6 +69,7 @@
     <Compile Include="Extensions\XmlExtensions\XmlReaderExtensions.cs" />
     <Compile Include="Http\HttpClientExtensions.cs" />
     <Compile Include="Http\ThumbprintSet.cs" />
+    <Compile Include="Identity.cs" />
     <Compile Include="Metadata\FederationMetadata.cs" />
     <Compile Include="KeyGenerator.cs" />
     <Compile Include="ObfuscatingComparer.cs" />
