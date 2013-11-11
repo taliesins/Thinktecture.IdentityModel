@@ -5,6 +5,7 @@
  */
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Thinktecture.IdentityModel.Http
@@ -12,7 +13,7 @@ namespace Thinktecture.IdentityModel.Http
     public class ThumbprintSet : HashSet<string>
     {
         public ThumbprintSet(params string[] thumbprints)
-            : base(thumbprints, StringComparer.OrdinalIgnoreCase)
+            : base(from t in thumbprints select t.Replace(" ", ""), StringComparer.OrdinalIgnoreCase)
         { }
     }
 }
