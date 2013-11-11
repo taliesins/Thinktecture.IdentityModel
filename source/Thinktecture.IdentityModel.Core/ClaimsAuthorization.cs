@@ -29,6 +29,8 @@ namespace Thinktecture.IdentityModel
 
         public static bool EnforceAuthorizationManagerImplementation { get; set; }
 
+        public static ClaimsAuthorizationManager CustomAuthorizationManager { get; set; }
+
         static Lazy<ClaimsAuthorizationManager> _claimsAuthorizationManager = new Lazy<ClaimsAuthorizationManager>(()
             => new IdentityConfiguration().ClaimsAuthorizationManager);
 
@@ -39,6 +41,11 @@ namespace Thinktecture.IdentityModel
         {
             get
             {
+                if (CustomAuthorizationManager != null )
+                {
+                    return CustomAuthorizationManager;
+                }
+
                 return _claimsAuthorizationManager.Value;
             }
         }
