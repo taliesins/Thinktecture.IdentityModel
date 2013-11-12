@@ -64,9 +64,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBuilderExtensions\SamlBearerAuthenticationExtensions.cs" />
-    <Compile Include="ClaimsTransformationMiddleware.cs" />
-    <Compile Include="AppBuilderExtensions\ClaimsTransformationMiddlewareExtensions.cs" />
-    <Compile Include="ClaimsTransformationOptions.cs" />
+    <Compile Include="Basic Authentication\BasicAuthenticationExtensions.cs" />
+    <Compile Include="Basic Authentication\BasicAuthenticationHandler.cs" />
+    <Compile Include="Basic Authentication\BasicAuthenticationMiddleware.cs" />
+    <Compile Include="Basic Authentication\BasicAuthenticationOptions.cs" />
+    <Compile Include="Claims Transformation\ClaimsTransformationMiddleware.cs" />
+    <Compile Include="Claims Transformation\ClaimsTransformationMiddlewareExtensions.cs" />
+    <Compile Include="Claims Transformation\ClaimsTransformationOptions.cs" />
+    <Compile Include="Client Certificates\ClientCertificateAuthenticationExtensions.cs" />
+    <Compile Include="Client Certificates\ClientCertificateAuthenticationHandler.cs" />
+    <Compile Include="Client Certificates\ClientCertificateAuthenticationMiddleware.cs" />
+    <Compile Include="Client Certificates\ClientCertificateAuthenticationOptions.cs" />
     <Compile Include="HeaderOAuthBearerProvider.cs" />
     <Compile Include="AppBuilderExtensions\IdentityModelJwtBearerAuthenticationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +91,7 @@
       <Name>Thinktecture.IdentityModel.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
