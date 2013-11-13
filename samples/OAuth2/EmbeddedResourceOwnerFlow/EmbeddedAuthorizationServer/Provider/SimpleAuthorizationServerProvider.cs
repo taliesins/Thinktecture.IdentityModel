@@ -15,8 +15,8 @@ namespace EmbeddedAuthorizationServer.Provider
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            // validate user credentials
-            // user credentials should be stored securely
+            // validate user credentials (demo!)
+            // user credentials should be stored securely (salted, iterated, hashed yada)
             if (context.UserName != context.Password)
             {
                 context.Rejected();
