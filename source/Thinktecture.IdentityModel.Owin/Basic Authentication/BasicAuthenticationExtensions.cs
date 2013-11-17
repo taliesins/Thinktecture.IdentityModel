@@ -1,4 +1,10 @@
-﻿using Thinktecture.IdentityModel.Owin;
+﻿/*
+ * Copyright (c) Dominick Baier, Brock Allen.  All rights reserved.
+ * contributed by Pedro Felix
+ * see license.txt
+ */
+
+using Thinktecture.IdentityModel.Owin;
 
 namespace Owin
 {

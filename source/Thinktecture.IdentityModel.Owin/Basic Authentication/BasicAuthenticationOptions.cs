@@ -1,8 +1,10 @@
-﻿using Microsoft.Owin.Security;
-using System;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿/*
+ * Copyright (c) Dominick Baier, Brock Allen.  All rights reserved.
+ * contributed by Pedro Felix
+ * see license.txt
+ */
+
+using Microsoft.Owin.Security;
 
 namespace Thinktecture.IdentityModel.Owin
 {

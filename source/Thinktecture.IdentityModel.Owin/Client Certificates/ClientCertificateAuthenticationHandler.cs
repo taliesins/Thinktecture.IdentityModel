@@ -1,9 +1,11 @@
-﻿using Microsoft.Owin.Security;
+﻿/*
+ * Copyright (c) Dominick Baier, Brock Allen.  All rights reserved.
+ * see license.txt
+ */
+
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Infrastructure;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens;
-using System.Security.Claims;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 

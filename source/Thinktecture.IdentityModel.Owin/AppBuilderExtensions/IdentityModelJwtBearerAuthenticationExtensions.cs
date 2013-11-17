@@ -1,4 +1,9 @@
-﻿using Microsoft.Owin.Security.Jwt;
+﻿/*
+ * Copyright (c) Dominick Baier, Brock Allen.  All rights reserved.
+ * see license.txt
+ */
+
+using Microsoft.Owin.Security.Jwt;
 using Microsoft.Owin.Security.OAuth;
 using System;
 

@@ -1,4 +1,9 @@
-﻿using Microsoft.Owin.Security;
+﻿/*
+ * Copyright (c) Dominick Baier, Brock Allen.  All rights reserved.
+ * see license.txt
+ */
+
+using Microsoft.Owin.Security;
 using System.IdentityModel.Selectors;
 
 namespace Thinktecture.IdentityModel.Owin

@@ -1,13 +1,14 @@
-﻿using Microsoft.Owin.Security.OAuth;
+﻿/*
+ * Copyright (c) Dominick Baier, Brock Allen.  All rights reserved.
+ * see license.txt
+ */
+
+using Microsoft.Owin.Security.OAuth;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Selectors;
 using System.IdentityModel.Tokens;
-using System.Linq;
-using System.Web;
 using Thinktecture.IdentityModel.Owin;
 using Thinktecture.IdentityModel.Tokens;
-
 
 namespace Owin
 {

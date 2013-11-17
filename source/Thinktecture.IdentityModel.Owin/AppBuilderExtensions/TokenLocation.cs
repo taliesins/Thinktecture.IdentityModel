@@ -1,4 +1,11 @@
-﻿namespace Thinktecture.IdentityModel.Owin
+﻿/*
+ * Copyright (c) Dominick Baier, Brock Allen.  All rights reserved.
+ * see license.txt
+ */
+
+using Thinktecture.IdentityModel.Owin;
+
+namespace Owin
 {
     public static class TokenLocation
     {

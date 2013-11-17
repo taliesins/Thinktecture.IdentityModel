@@ -84,7 +84,7 @@
     <Compile Include="AppBuilderExtensions\IdentityModelJwtBearerAuthenticationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryStringOAuthBearerProvider.cs" />
-    <Compile Include="TokenLocation.cs" />
+    <Compile Include="AppBuilderExtensions\TokenLocation.cs" />
     <Compile Include="WifTokenFormat.cs" />
   </ItemGroup>
   <ItemGroup>
