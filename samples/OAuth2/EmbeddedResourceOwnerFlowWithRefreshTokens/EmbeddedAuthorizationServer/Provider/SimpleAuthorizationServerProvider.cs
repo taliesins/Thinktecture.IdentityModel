@@ -35,7 +35,7 @@ namespace EmbeddedAuthorizationServer.Provider
             }
 
             // create identity
-            var id = new ClaimsIdentity("Embedded");
+            var id = new ClaimsIdentity(context.Options.AuthenticationType);
             id.AddClaim(new Claim("sub", context.UserName));
             id.AddClaim(new Claim("role", "user"));
 
