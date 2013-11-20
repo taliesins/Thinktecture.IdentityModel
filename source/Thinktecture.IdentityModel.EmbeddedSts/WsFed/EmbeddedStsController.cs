@@ -13,6 +13,7 @@ using Thinktecture.IdentityModel.EmbeddedSts.Assets;
 
 namespace Thinktecture.IdentityModel.EmbeddedSts.WsFed
 {
+    [AllowAnonymous]
     public class EmbeddedStsController : Controller
     {
         ContentResult Html(string html)
