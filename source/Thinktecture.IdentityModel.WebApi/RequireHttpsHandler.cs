@@ -13,7 +13,7 @@ namespace Thinktecture.IdentityModel.WebApi
 {
     public class RequireHttpsHandler : DelegatingHandler
     {
-        protected override Task<HttpResponseMessage> SendAsync(
+        protected override async Task<HttpResponseMessage> SendAsync(
             HttpRequestMessage request,
             CancellationToken cancellationToken)
         {
@@ -23,10 +23,10 @@ namespace Thinktecture.IdentityModel.WebApi
                     request.CreateResponse(HttpStatusCode.Forbidden);
 
                 forbiddenResponse.ReasonPhrase = "HTTPS Required";
-                return Task.FromResult<HttpResponseMessage>(forbiddenResponse);
+                return forbiddenResponse;
             }
 
-            return base.SendAsync(request, cancellationToken);
+            return await base.SendAsync(request, cancellationToken);
         }
     }
 }
