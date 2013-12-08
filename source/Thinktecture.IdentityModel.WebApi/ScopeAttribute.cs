@@ -39,13 +39,13 @@ namespace Thinktecture.IdentityModel.WebApi
 
             foreach (var scope in _scopes)
             {
-                if (!grantedScopes.Contains(scope))
+                if (grantedScopes.Contains(scope, StringComparer.OrdinalIgnoreCase))
                 {
-                    return false;
+                    return true;
                 }
             }
 
-            return true;
+            return false;
         }
     }
 }
