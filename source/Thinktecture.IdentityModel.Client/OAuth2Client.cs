@@ -27,9 +27,18 @@ namespace Thinktecture.IdentityModel.Client
 			None
 		};
 
-		public OAuth2Client(Uri address)
+        public OAuth2Client(Uri address) : this(address, new HttpClientHandler())
+        {
+        }
+
+		public OAuth2Client(Uri address, HttpMessageHandler innerHttpClientHandler)
 		{
-			_client = new HttpClient
+            if (innerHttpClientHandler == null)
+            {
+                throw new ArgumentNullException("innerHttpClientHandler");
+            }
+
+			_client = new HttpClient(innerHttpClientHandler)
 			{
 				BaseAddress = address
 			};
