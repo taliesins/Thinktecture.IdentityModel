@@ -28,18 +28,31 @@ namespace Thinktecture.IdentityModel.Client
 		};
 
 		public OAuth2Client(Uri address)
+			: this(address, new HttpClientHandler())
+		{ }
+
+		public OAuth2Client(Uri address, HttpMessageHandler innerHttpClientHandler)
 		{
-			_client = new HttpClient
+			if (innerHttpClientHandler == null)
+			{
+				throw new ArgumentNullException("innerHttpClientHandler");
+			}
+
+			_client = new HttpClient(innerHttpClientHandler)
 			{
 				BaseAddress = address
 			};
-			
+
 			_address = address;
 			_authenticationStyle = ClientAuthenticationStyle.None;
 		}
 
 		public OAuth2Client(Uri address, string clientId, string clientSecret, ClientAuthenticationStyle style = ClientAuthenticationStyle.BasicAuthentication)
-			: this(address)
+			: this(address, clientId, clientSecret, new HttpClientHandler(), style)
+		{ }
+
+		public OAuth2Client(Uri address, string clientId, string clientSecret, HttpMessageHandler innerHttpClientHandler, ClientAuthenticationStyle style = ClientAuthenticationStyle.BasicAuthentication)
+			: this(address, innerHttpClientHandler)
 		{
 			if (style == ClientAuthenticationStyle.BasicAuthentication)
 			{
