@@ -119,7 +119,7 @@ namespace Thinktecture.IdentityModel.Client
 			return string.Format("{0}?{1}", endpoint.AbsoluteUri, qs);
 		}
 
-		public async Task<TokenResponse> RequestResourceOwnerPasswordAsync(string userName, string password, string scope = null, Dictionary<string, string> additionalValues = null)
+		public Task<TokenResponse> RequestResourceOwnerPasswordAsync(string userName, string password, string scope = null, Dictionary<string, string> additionalValues = null)
 		{
 			var fields = new Dictionary<string, string>
 			{
@@ -133,10 +133,10 @@ namespace Thinktecture.IdentityModel.Client
 				fields.Add(OAuth2Constants.Scope, scope);
 			}
 
-			return await Request(Merge(fields, additionalValues));
+			return Request(Merge(fields, additionalValues));
 		}
 
-		public async Task<TokenResponse> RequestAuthorizationCodeAsync(string code, string redirectUri, Dictionary<string, string> additionalValues = null)
+		public Task<TokenResponse> RequestAuthorizationCodeAsync(string code, string redirectUri, Dictionary<string, string> additionalValues = null)
 		{
 			var fields = new Dictionary<string, string>
 			{
@@ -145,10 +145,10 @@ namespace Thinktecture.IdentityModel.Client
 				{ OAuth2Constants.RedirectUri, redirectUri }
 			};
 
-			return await Request(Merge(fields, additionalValues));
+			return Request(Merge(fields, additionalValues));
 		}
 
-		public async Task<TokenResponse> RequestRefreshTokenAsync(string refreshToken, Dictionary<string, string> additionalValues = null)
+		public Task<TokenResponse> RequestRefreshTokenAsync(string refreshToken, Dictionary<string, string> additionalValues = null)
 		{
 			var fields = new Dictionary<string, string>
 			{
@@ -156,10 +156,10 @@ namespace Thinktecture.IdentityModel.Client
 				{ OAuth2Constants.RefreshToken, refreshToken }
 			};
 
-			return await Request(Merge(fields, additionalValues));
+			return Request(Merge(fields, additionalValues));
 		}
 
-		public async Task<TokenResponse> RequestClientCredentialsAsync(string scope = null, Dictionary<string, string> additionalValues = null)
+		public Task<TokenResponse> RequestClientCredentialsAsync(string scope = null, Dictionary<string, string> additionalValues = null)
 		{
 			var fields = new Dictionary<string, string>
 			{
@@ -171,10 +171,10 @@ namespace Thinktecture.IdentityModel.Client
 				fields.Add(OAuth2Constants.Scope, scope);
 			}
 
-			return await Request(Merge(fields, additionalValues));
+			return Request(Merge(fields, additionalValues));
 		}
 
-		public async Task<TokenResponse> RequestAssertionAsync(string assertionType, string assertion, string scope = null, Dictionary<string, string> additionalValues = null)
+		public Task<TokenResponse> RequestAssertionAsync(string assertionType, string assertion, string scope = null, Dictionary<string, string> additionalValues = null)
 		{
 			var fields = new Dictionary<string, string>
 			{
@@ -187,15 +187,15 @@ namespace Thinktecture.IdentityModel.Client
 				fields.Add(OAuth2Constants.Scope, scope);
 			}
 
-			return await Request(Merge(fields, additionalValues));
+			return Request(Merge(fields, additionalValues));
 		}
 
 		public async Task<TokenResponse> Request(Dictionary<string, string> form)
 		{
-			var response = await _client.PostAsync("", new FormUrlEncodedContent(form));
+			var response = await _client.PostAsync(string.Empty, new FormUrlEncodedContent(form)).ConfigureAwait(false);
 			response.EnsureSuccessStatusCode();
 
-			var content = await response.Content.ReadAsStringAsync();
+			var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 			return new TokenResponse(content);
 		}
 
