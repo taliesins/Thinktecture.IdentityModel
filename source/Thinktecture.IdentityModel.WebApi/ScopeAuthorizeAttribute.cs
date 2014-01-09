@@ -11,7 +11,7 @@ using System.Web.Http.Controllers;
 
 namespace Thinktecture.IdentityModel.WebApi
 {
-    public class ScopeAttribute : AuthorizeAttribute
+    public class ScopeAuthorizeAttribute : AuthorizeAttribute
     {
         string[] _scopes;
         static string _scopeClaimType = "scope";
@@ -22,7 +22,7 @@ namespace Thinktecture.IdentityModel.WebApi
             set { _scopeClaimType = value; }
         }
 
-        public ScopeAttribute(params string[] scopes)
+        public ScopeAuthorizeAttribute(params string[] scopes)
         {
             if (scopes == null)
             {

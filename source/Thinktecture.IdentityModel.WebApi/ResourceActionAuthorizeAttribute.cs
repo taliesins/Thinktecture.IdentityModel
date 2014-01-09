@@ -9,15 +9,15 @@ using System.Web.Http.Controllers;
 
 namespace Thinktecture.IdentityModel.WebApi
 {
-    public class ClaimsAuthorizeAttribute : AuthorizeAttribute
+    public class ResourceActionAuthorizeAttribute : AuthorizeAttribute
     {
         private string _action;
         private string[] _resources;
 
-        public ClaimsAuthorizeAttribute()
+        public ResourceActionAuthorizeAttribute()
         { }
 
-        public ClaimsAuthorizeAttribute(string action, params string[] resources)
+        public ResourceActionAuthorizeAttribute(string action, params string[] resources)
         {
             _action = action; 
             _resources = resources;
