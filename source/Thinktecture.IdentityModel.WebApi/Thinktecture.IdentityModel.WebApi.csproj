@@ -59,11 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClaimsAuthorizeAttribute.cs" />
+    <Compile Include="ResourceActionAuthorizeAttribute.cs" />
     <Compile Include="IdentityModelJwtSecurityTokenHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequireHttpsHandler.cs" />
-    <Compile Include="ScopeAttribute.cs" />
+    <Compile Include="ScopeAuthorizeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
