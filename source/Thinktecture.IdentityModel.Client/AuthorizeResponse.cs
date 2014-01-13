@@ -74,6 +74,14 @@ namespace Thinktecture.IdentityModel.Client
             }
         }
 
+        public string State
+        {
+            get
+            {
+                return TryGet(OAuth2Constants.State);
+            }
+        }
+
         public AuthorizeResponse(string raw)
         {
             Raw = raw;
