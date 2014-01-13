@@ -186,11 +186,11 @@ namespace Thinktecture.IdentityModel.WebApi.Authentication.Handler
                 {
                     name = principal.Identity.Name;
                 }
-                else if (!string.IsNullOrWhiteSpace(principal.FindFirst(ClaimTypes.NameIdentifier).Value))
+                else if (principal.HasClaim( ClaimTypes.NameIdentifier ) && !string.IsNullOrWhiteSpace(principal.FindFirst(ClaimTypes.NameIdentifier).Value))
                 {
                     name = principal.Identity.Name;
                 }
-                else if (!string.IsNullOrWhiteSpace(principal.FindFirst("sub").Value))
+                else if (principal.HasClaim( "sub" ) && !string.IsNullOrWhiteSpace(principal.FindFirst("sub").Value))
                 {
                     name = principal.Identity.Name;
                 }
