@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>1.0.0-beta1</version>
+    <authors>Dominick Baier, Brock Allen</authors>
+    <owners>Dominick Baier, Brock Allen</owners>
+    <copyright>Dominick Baier, Brock Allen 2013</copyright>
+
+    <projectUrl>https://github.com/thinktecture</projectUrl>
+    <iconUrl>http://1.gravatar.com/blavatar/3b437c799e12e32beb1d8cfda1199ab3?s=32</iconUrl>
+
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.IdentityModel" targetFramework="net45" />
+    </frameworkAssemblies>
+
+    <dependencies>
+      <dependency id="System.IdentityModel.Tokens.Jwt" version="3.0.0" />
+    </dependencies>
+    
+    <id>Thinktecture.IdentityModel.Owin</id>
+    <title>Thinktecture.IdentityModel.Owin</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    
+    <description>Helper library for claims based identity &amp; access control in OWIN/Katana based applications.</description>
+    <summary>Helper library for claims based identity &amp; access control in OWIN/Katana based applications.</summary>
+    
+    <language>en-US</language>
+    <tags>WIF Security Federation Identity Claims Authentication Authorization Access Control WebAPI Web API OAuth2 OWIN Katana</tags>
+  </metadata>
+</package>
