@@ -105,14 +105,14 @@
     </Reference>
     <Reference Include="Thinktecture.IdentityModel.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Thinktecture\Thinktecture.IdentityModel\build\Thinktecture.IdentityModel.Core.dll</HintPath>
+      <HintPath>..\..\..\..\build\Thinktecture.IdentityModel.Core.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityModel.SystemWeb">
-      <HintPath>..\..\..\Thinktecture\Thinktecture.IdentityModel\build\Thinktecture.IdentityModel.SystemWeb.dll</HintPath>
+      <HintPath>..\..\..\..\build\Thinktecture.IdentityModel.SystemWeb.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityModel.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Thinktecture\Thinktecture.IdentityModel\build\Thinktecture.IdentityModel.WebApi.dll</HintPath>
+      <HintPath>..\..\..\..\build\Thinktecture.IdentityModel.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
