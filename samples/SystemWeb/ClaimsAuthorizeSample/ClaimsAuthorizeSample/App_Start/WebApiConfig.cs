@@ -13,7 +13,7 @@ namespace ClaimsAuthorizeSample
             // Web API configuration and services
 
             // global claims authorize filter
-            config.Filters.Add(new ClaimsAuthorizeAttribute());
+            config.Filters.Add(new ResourceActionAuthorizeAttribute());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

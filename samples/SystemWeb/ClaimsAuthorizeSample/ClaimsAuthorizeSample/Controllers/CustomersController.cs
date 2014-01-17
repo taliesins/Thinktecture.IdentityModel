@@ -6,7 +6,7 @@ namespace ClaimsAuthorizeSample.Controllers
 {
     public class CustomersController : ApiController
     {
-        [ClaimsAuthorize("Read", "SomeData")]
+        [ResourceActionAuthorize("Read", "SomeData")]
         public string Get()
         {
             return "OK";
