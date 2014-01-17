@@ -25,10 +25,15 @@ namespace Thinktecture.IdentityModel.WebApi
 
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
+            var principal = actionContext.ControllerContext.RequestContext.Principal as ClaimsPrincipal;
+            if (principal == null || principal.Identity == null || !principal.Identity.IsAuthenticated)
+            {
+                return false;
+            }
+
             if (!string.IsNullOrWhiteSpace(_action))
             {
-                var principal = actionContext.ControllerContext.RequestContext.Principal as ClaimsPrincipal;
-                return ClaimsAuthorization.CheckAccess(_action, _resources);
+                return ClaimsAuthorization.CheckAccess(principal, _action, _resources);
             }
             else
             {
