@@ -83,7 +83,7 @@
     <Compile Include="FrameOptionsAttribute.cs" />
     <Compile Include="WIF\ITokenCacheRepository.cs" />
     <Compile Include="Metadata\CachingMetadataBasedIssuerNameRegistry.cs" />
-    <Compile Include="ClaimsAuthorizeAttribute.cs" />
+    <Compile Include="ResourceActionAuthorizeAttribute.cs" />
     <Compile Include="Metadata\MachineKeyMetadataCache.cs" />
     <Compile Include="WIF\PassiveModuleConfiguration.cs" />
     <Compile Include="WIF\PassiveRepositorySessionSecurityTokenCache.cs" />
