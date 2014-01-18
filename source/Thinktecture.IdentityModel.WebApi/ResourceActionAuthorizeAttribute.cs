@@ -26,9 +26,9 @@ namespace Thinktecture.IdentityModel.WebApi
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
             var principal = actionContext.ControllerContext.RequestContext.Principal as ClaimsPrincipal;
-            if (principal == null || principal.Identity == null || !principal.Identity.IsAuthenticated)
+            if (principal == null || principal.Identity == null)
             {
-                return false;
+                principal = Principal.Anonymous;
             }
 
             if (!string.IsNullOrWhiteSpace(_action))
@@ -37,15 +37,14 @@ namespace Thinktecture.IdentityModel.WebApi
             }
             else
             {
-                return CheckAccess(actionContext);
+                return CheckAccess(actionContext, principal);
             }
         }
 
-        protected virtual bool CheckAccess(HttpActionContext actionContext)
+        protected virtual bool CheckAccess(HttpActionContext actionContext, ClaimsPrincipal principal)
         {
             var action = actionContext.ActionDescriptor.ActionName;
             var resource = actionContext.ControllerContext.ControllerDescriptor.ControllerName;
-            var principal = actionContext.ControllerContext.RequestContext.Principal as ClaimsPrincipal;
 
             return ClaimsAuthorization.CheckAccess(
                 principal,

@@ -34,9 +34,9 @@ namespace Thinktecture.IdentityModel.Mvc
         {
             var principal = httpContext.User as ClaimsPrincipal;
 
-            if (principal == null || principal.Identity == null || !principal.Identity.IsAuthenticated)
+            if (principal == null || principal.Identity == null)
             {
-                return false;
+                principal = Principal.Anonymous;
             }
 
             if (!string.IsNullOrWhiteSpace(_action))
