@@ -17,7 +17,16 @@ namespace EmbeddedAuthorizationServer.Provider
             var guid = Guid.NewGuid().ToString();
             
             // maybe only create a handle the first time, then re-use for same client
-            _refreshTokens.TryAdd(guid, context.Ticket);
+            // copy properties and set the desired lifetime of refresh token
+            var refreshTokenProperties = new AuthenticationProperties(context.Ticket.Properties.Dictionary)
+            {
+                IssuedUtc = context.Ticket.Properties.IssuedUtc,
+                ExpiresUtc = DateTime.UtcNow.AddYears(1)
+            };
+            var refreshTokenTicket = new AuthenticationTicket(context.Ticket.Identity, refreshTokenProperties);
+            
+            //_refreshTokens.TryAdd(guid, context.Ticket);
+            _refreshTokens.TryAdd(guid, refreshTokenTicket);
 
             // consider storing only the hash of the handle
             context.SetToken(guid);
