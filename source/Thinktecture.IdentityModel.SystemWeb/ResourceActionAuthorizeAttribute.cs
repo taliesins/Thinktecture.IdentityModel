@@ -3,21 +3,22 @@
  * see LICENSE
  */
 
+using System.Security.Claims;
 using System.Web.Mvc;
 
-namespace Thinktecture.IdentityModel.SystemWeb
+namespace Thinktecture.IdentityModel.Mvc
 {
-    public class ClaimsAuthorizeAttribute : AuthorizeAttribute
+    public class ResourceActionAuthorizeAttribute : AuthorizeAttribute
     {
         private string _action;
         private string[] _resources;
 
         private const string _label = "Thinktecture.IdentityModel.Authorization.Mvc.ClaimsAuthorizeAttribute";
 
-        public ClaimsAuthorizeAttribute()
+        public ResourceActionAuthorizeAttribute()
         { }
 
-        public ClaimsAuthorizeAttribute(string action, params string[] resources)
+        public ResourceActionAuthorizeAttribute(string action, params string[] resources)
         {
             _action = action;
             _resources = resources;
@@ -31,23 +32,30 @@ namespace Thinktecture.IdentityModel.SystemWeb
 
         protected override bool AuthorizeCore(System.Web.HttpContextBase httpContext)
         {
+            var principal = httpContext.User as ClaimsPrincipal;
+
+            if (principal == null || principal.Identity == null)
+            {
+                principal = Principal.Anonymous;
+            }
+
             if (!string.IsNullOrWhiteSpace(_action))
             {
-                return ClaimsAuthorization.CheckAccess(_action, _resources);
+                return ClaimsAuthorization.CheckAccess(principal, _action, _resources);
             }
             else
             {
                 var filterContext = httpContext.Items[_label] as System.Web.Mvc.AuthorizationContext;
-                return CheckAccess(filterContext);
+                return CheckAccess(principal, filterContext);
             }
         }
 
-        protected virtual bool CheckAccess(System.Web.Mvc.AuthorizationContext filterContext)
+        protected virtual bool CheckAccess(ClaimsPrincipal principal, System.Web.Mvc.AuthorizationContext filterContext)
         {
             var action = filterContext.RouteData.Values["action"] as string;
             var controller = filterContext.RouteData.Values["controller"] as string;
 
-            return ClaimsAuthorization.CheckAccess(action, controller);
+            return ClaimsAuthorization.CheckAccess(principal, action, controller);
         }
     }
 }

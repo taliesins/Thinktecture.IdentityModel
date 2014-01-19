@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Threading;
 using Thinktecture.IdentityModel.Client;
 
 namespace Client
@@ -10,7 +11,7 @@ namespace Client
         {
             var response = GetToken();
             CallService(response.AccessToken);
-            
+
             var refreshResponse = RefreshToken(response.RefreshToken);
             CallService(refreshResponse.AccessToken);
 
