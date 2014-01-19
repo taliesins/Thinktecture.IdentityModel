@@ -19,6 +19,15 @@ namespace Thinktecture.IdentityModel.Extensions
             }
             return false;
         }
+        
+        public static bool HasClaim(this ClaimsIdentity user, string type)
+        {
+            if (user != null)
+            {
+                return user.HasClaim(x => x.Type == type);
+            }
+            return false;
+        }
 
         public static string GetValue(this IEnumerable<Claim> claims, string type)
         {
