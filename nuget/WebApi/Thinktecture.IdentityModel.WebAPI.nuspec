@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0-beta6</version>
+    <version>1.0.0</version>
     <authors>Dominick Baier, Brock Allen</authors>
     <owners>Dominick Baier, Brock Allen</owners>
     <copyright>Dominick Baier, Brock Allen 2013</copyright>
@@ -14,13 +14,13 @@
     </frameworkAssemblies>
 
     <dependencies>
-      <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0-beta1" />
-      <dependency id="System.IdentityModel.Tokens.Jwt" version="1.0.0" />
+      <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0" />
+      <dependency id="System.IdentityModel.Tokens.Jwt" version="3.0.0" />
       <dependency id="Microsoft.AspNet.WebApi.Core" version="5.0.0" />
     </dependencies>
     
     <id>Thinktecture.IdentityModel.WebApi</id>
-    <title>Thinktecture.IdentityModel.WebApi</title>
+    <title>Thinktecture.IdentityModel for ASP.NET Web API v2</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     
     <description>Helper library for claims based identity &amp; access control in ASP.NET Web API v2.</description>
