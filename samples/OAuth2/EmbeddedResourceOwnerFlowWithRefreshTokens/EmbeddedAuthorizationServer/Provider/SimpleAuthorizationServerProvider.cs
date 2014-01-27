@@ -17,8 +17,6 @@ namespace EmbeddedAuthorizationServer.Provider
             {
                 if (secret == "secret")
                 {
-                    // need to make the client_id available for later security checks
-                    context.OwinContext.Set<string>("as:client_id", id);
                     context.Validated();
                 }
             }
@@ -52,7 +50,7 @@ namespace EmbeddedAuthorizationServer.Provider
         public override async Task GrantRefreshToken(OAuthGrantRefreshTokenContext context)
         {
             var originalClient = context.Ticket.Properties.Dictionary["as:client_id"];
-            var currentClient = context.OwinContext.Get<string>("as:client_id");
+            var currentClient = context.ClientId;
 
             // enforce client binding of refresh token
             if (originalClient != currentClient)
