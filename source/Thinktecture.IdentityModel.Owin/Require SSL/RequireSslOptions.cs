@@ -5,7 +5,7 @@
 
 namespace Thinktecture.IdentityModel.Owin
 {
-    public class RequireTlsOptions
+    public class RequireSslOptions
     {
         public bool RequireClientCertificate { get; set; }
     }

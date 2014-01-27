@@ -4,21 +4,29 @@
  */
 
 using System.IdentityModel.Selectors;
+using System.Security.Cryptography.X509Certificates;
 using Thinktecture.IdentityModel.Owin;
 
 namespace Owin
 {
     public static class ClientCertificateAuthenticationExtensions
     {
-        public static IAppBuilder UseClientCertificateAuthentication(this IAppBuilder app, X509CertificateValidator validator = null)
+        public static IAppBuilder UseClientCertificateAuthentication(this IAppBuilder app, X509RevocationMode revocationMode = X509RevocationMode.Online, bool createExtendedClaims = false)
         {
-            var options = new ClientCertificateAuthenticationOptions
+            var policy = new X509ChainPolicy
             {
-                Validator = validator ?? X509CertificateValidator.ChainTrust
+                RevocationMode = revocationMode
             };
 
-            app.UseClientCertificateAuthentication(options);
-            return app;
+            var validator = X509CertificateValidator.CreateChainTrustValidator(true, policy);
+
+            var options = new ClientCertificateAuthenticationOptions
+            {
+                Validator = validator,
+                CreateExtendedClaimSet = createExtendedClaims
+            };
+
+            return app.UseClientCertificateAuthentication(options);
         }
 
         public static IAppBuilder UseClientCertificateAuthentication(this IAppBuilder app, ClientCertificateAuthenticationOptions options)

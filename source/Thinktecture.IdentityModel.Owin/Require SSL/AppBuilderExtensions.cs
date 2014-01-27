@@ -9,9 +9,9 @@ namespace Owin
 {
     public static class AppBuilderExtensions
     {
-        public static IAppBuilder UseRequireTls(this IAppBuilder app, bool requireClientCertificate = false)
+        public static IAppBuilder RequireSsl(this IAppBuilder app, bool requireClientCertificate = false)
         {
-            app.Use(typeof(RequireTlsMiddleware), new RequireTlsOptions { RequireClientCertificate = requireClientCertificate });
+            app.Use(typeof(RequireSslMiddleware), new RequireSslOptions { RequireClientCertificate = requireClientCertificate });
             return app;
         }
     }

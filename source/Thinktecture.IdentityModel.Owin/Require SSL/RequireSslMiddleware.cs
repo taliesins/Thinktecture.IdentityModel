@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Thinktecture.IdentityModel.Owin
 {
-    public class RequireTlsMiddleware
+    public class RequireSslMiddleware
     {
         readonly Func<IDictionary<string, object>, Task> _next;
-        private RequireTlsOptions _options;
+        private RequireSslOptions _options;
 
-        public RequireTlsMiddleware(Func<IDictionary<string, object>, Task> next, RequireTlsOptions options)
+        public RequireSslMiddleware(Func<IDictionary<string, object>, Task> next, RequireSslOptions options)
         {
             _next = next;
             _options = options;

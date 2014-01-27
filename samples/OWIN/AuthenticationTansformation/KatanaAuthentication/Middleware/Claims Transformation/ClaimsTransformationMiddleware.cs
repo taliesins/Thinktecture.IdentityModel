@@ -27,7 +27,8 @@ namespace Thinktecture.IdentityModel.Owin
             var context = new OwinContext(env);
             
             if (context.Authentication != null && 
-                context.Authentication.User != null)
+                context.Authentication.User != null &&
+                context.Authentication.User.Identity != null)
             {
                 var transformedPrincipal = await _options.ClaimsTransformation(context.Authentication.User);
                 context.Authentication.User = new ClaimsPrincipal(transformedPrincipal);

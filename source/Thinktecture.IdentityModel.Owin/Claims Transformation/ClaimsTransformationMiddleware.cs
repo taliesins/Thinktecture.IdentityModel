@@ -6,6 +6,7 @@
 using Microsoft.Owin;
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Thinktecture.IdentityModel.Owin
@@ -23,16 +24,14 @@ namespace Thinktecture.IdentityModel.Owin
 
         public async Task Invoke(IDictionary<string, object> env)
         {
-            // use Katana OWIN abstractions (optional)
             var context = new OwinContext(env);
-            var transformer = _options.ClaimsAuthenticationManager;
-
+            
             if (context.Authentication != null && 
-                context.Authentication.User != null)
+                context.Authentication.User != null &&
+                context.Authentication.User.Identity != null)
             {
-                context.Authentication.User = transformer.Authenticate(
-                    context.Request.Uri.AbsoluteUri,
-                    context.Authentication.User);
+                var transformedPrincipal = await _options.ClaimsTransformation(context.Authentication.User);
+                context.Authentication.User = new ClaimsPrincipal(transformedPrincipal);
             }
 
             await _next(env);

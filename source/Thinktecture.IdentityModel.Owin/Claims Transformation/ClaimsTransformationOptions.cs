@@ -3,12 +3,14 @@
  * see license.txt
  */
 
+using System;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Thinktecture.IdentityModel.Owin
 {
     public class ClaimsTransformationOptions
     {
-        public ClaimsAuthenticationManager ClaimsAuthenticationManager { get; set; }
+        public Func<ClaimsPrincipal, Task<ClaimsPrincipal>> ClaimsTransformation { get; set; }
     }
 }

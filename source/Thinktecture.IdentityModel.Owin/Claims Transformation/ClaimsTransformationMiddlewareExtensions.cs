@@ -5,17 +5,18 @@
 
 using System;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using Thinktecture.IdentityModel.Owin;
 
 namespace Owin
 {
     public static class ClaimsTransformationMiddlewareExtensions
     {
-        public static IAppBuilder UseClaimsTransformation(this IAppBuilder app, ClaimsAuthenticationManager manager)
+        public static IAppBuilder UseClaimsTransformation(this IAppBuilder app, Func<ClaimsPrincipal, Task<ClaimsPrincipal>> transformation)
         {
             return app.UseClaimsTransformation(new ClaimsTransformationOptions
                 {
-                    ClaimsAuthenticationManager = manager
+                    ClaimsTransformation = transformation
                 });
         }
 

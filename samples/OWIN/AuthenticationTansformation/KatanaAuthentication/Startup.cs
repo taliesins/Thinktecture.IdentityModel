@@ -31,7 +31,7 @@ namespace KatanaAuthentication
 
         private Task<ClaimsPrincipal> TransformClaims(ClaimsPrincipal incoming)
         {
-            if (incoming.Identities.Count() == 0 || !incoming.Identity.IsAuthenticated)
+            if (!incoming.Identity.IsAuthenticated)
             {
                 return Task.FromResult<ClaimsPrincipal>(incoming);
             }

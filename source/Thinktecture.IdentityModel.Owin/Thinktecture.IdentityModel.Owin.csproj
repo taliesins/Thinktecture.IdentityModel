@@ -86,9 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryStringOAuthBearerProvider.cs" />
     <Compile Include="AppBuilderExtensions\TokenLocation.cs" />
-    <Compile Include="Require TLS\AppBuilderExtensions.cs" />
-    <Compile Include="Require TLS\RequireTlsOptions.cs" />
-    <Compile Include="Require TLS\RequireTlsMiddleware.cs" />
+    <Compile Include="Require SSL\AppBuilderExtensions.cs" />
+    <Compile Include="Require SSL\RequireSslMiddleware.cs" />
+    <Compile Include="Require SSL\RequireSslOptions.cs" />
     <Compile Include="WifTokenFormat.cs" />
   </ItemGroup>
   <ItemGroup>
