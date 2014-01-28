@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0-beta1</version>
+    <version>1.0.0</version>
     <authors>Dominick Baier, Brock Allen</authors>
     <owners>Dominick Baier, Brock Allen</owners>
     <copyright>Dominick Baier, Brock Allen 2013</copyright>
@@ -15,10 +15,13 @@
 
     <dependencies>
       <dependency id="System.IdentityModel.Tokens.Jwt" version="3.0.0" />
+      <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0" />
+      <dependency id="OWIN" version="1.0.0" />
+      <dependency id="Microsoft.Owin" version="2.1.0" />
     </dependencies>
     
     <id>Thinktecture.IdentityModel.Owin</id>
-    <title>Thinktecture.IdentityModel.Owin</title>
+    <title>Thinktecture.IdentityModel for OWIN/Katana</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     
     <description>Helper library for claims based identity &amp; access control in OWIN/Katana based applications.</description>
