@@ -9,6 +9,7 @@ using System.Diagnostics.Contracts;
 using System.IdentityModel.Configuration;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 
 namespace Thinktecture.IdentityModel
 {
@@ -78,6 +79,18 @@ namespace Thinktecture.IdentityModel
 
             return CheckAccess(context);
         }
+
+        public static bool CheckAccess(IPrincipal principal, string action, params string[] resources)
+        {
+            var claimsPrincipal = principal as ClaimsPrincipal;
+            if (claimsPrincipal == null)
+            {
+                throw new InvalidOperationException("Principal is not a ClaimsPrincipal");
+            }
+
+            return CheckAccess(claimsPrincipal, action, resources);
+        }
+        
 
         /// <summary>
         /// Checks the authorization policy.
@@ -154,6 +167,7 @@ namespace Thinktecture.IdentityModel
             return AuthorizationManager.CheckAccess(context);
         }
 
+      
         public static AuthorizationContext CreateAuthorizationContext(ClaimsPrincipal principal, string action, params string[] resources)
         {
             var actionClaims = new Collection<Claim>
