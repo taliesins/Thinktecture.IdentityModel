@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Thinktecture.IdentityModel.Web.Mvc
+namespace Thinktecture.IdentityModel.SystemWeb.Mvc
 {
     /// <summary>
     /// Indicate the scenarios in which the response may be hosted in an iframe. See https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options for more information.

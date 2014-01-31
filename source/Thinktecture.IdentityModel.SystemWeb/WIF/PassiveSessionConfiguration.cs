@@ -3,7 +3,7 @@ using System.IdentityModel.Services;
 using System.IdentityModel.Services.Tokens;
 using System.IdentityModel.Tokens;
 
-namespace Thinktecture.IdentityModel.Web
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public static class PassiveSessionConfiguration
     {

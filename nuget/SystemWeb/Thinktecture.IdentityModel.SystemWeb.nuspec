@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.0.0-beta2</version>
+    <version>1.0.0-beta3</version>
     <authors>Dominick Baier, Brock Allen</authors>
     <owners>Dominick Baier, Brock Allen</owners>
     <copyright>Dominick Baier, Brock Allen 2013</copyright>
@@ -14,11 +14,11 @@
     </frameworkAssemblies>
 
     <dependencies>
-      <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0-beta1" />
+      <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0" />
     </dependencies>
     
     <id>Thinktecture.IdentityModel.SystemWeb</id>
-    <title>Thinktecture.IdentityModel.SystemWeb</title>
+    <title>Thinktecture.IdentityModel for SystemWeb and MVC</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     
     <description>Helper library for claims based identity &amp; access control in ASP.NET and MVC5.</description>

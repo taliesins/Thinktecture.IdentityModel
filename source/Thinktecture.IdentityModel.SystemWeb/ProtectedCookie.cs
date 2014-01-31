@@ -11,7 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Web;
 
-namespace Thinktecture.IdentityModel.Web
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public class ProtectedCookie
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace Thinktecture.IdentityModel.Web.Configuration
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public class SecuritySessionSection : ConfigurationSection
     {

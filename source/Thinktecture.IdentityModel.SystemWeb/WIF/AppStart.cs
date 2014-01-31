@@ -1,9 +1,9 @@
 ﻿using System.Web;
-using Thinktecture.IdentityModel.Web.Configuration;
+using Thinktecture.IdentityModel.SystemWeb;
 
 [assembly:PreApplicationStartMethod(typeof(AppStart), "Start")]
 
-namespace Thinktecture.IdentityModel.Web.Configuration
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public class AppStart
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace Thinktecture.IdentityModel.Web
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public enum ProtectionMode
     {

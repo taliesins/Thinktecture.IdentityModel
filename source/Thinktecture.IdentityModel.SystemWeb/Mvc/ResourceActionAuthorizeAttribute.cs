@@ -6,7 +6,7 @@
 using System.Security.Claims;
 using System.Web.Mvc;
 
-namespace Thinktecture.IdentityModel.Mvc
+namespace Thinktecture.IdentityModel.SystemWeb.Mvc
 {
     public class ResourceActionAuthorizeAttribute : AuthorizeAttribute
     {

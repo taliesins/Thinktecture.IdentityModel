@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Thinktecture.IdentityModel.Web
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public class PassiveModuleConfiguration
     {

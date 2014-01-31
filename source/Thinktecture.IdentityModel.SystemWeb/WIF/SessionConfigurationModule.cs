@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace Thinktecture.IdentityModel.Web.Configuration
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public class SessionConfigurationModule : IHttpModule
     {

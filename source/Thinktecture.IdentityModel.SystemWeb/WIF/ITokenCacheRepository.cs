@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Thinktecture.IdentityModel.Web
+namespace Thinktecture.IdentityModel.SystemWeb
 {
     public interface ITokenCacheRepository
     {

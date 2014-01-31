@@ -76,14 +76,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\AppStart.cs" />
-    <Compile Include="Configuration\SecuritySessionSection.cs" />
-    <Compile Include="Configuration\SessionConfiguration.cs" />
-    <Compile Include="Configuration\SessionConfigurationModule.cs" />
-    <Compile Include="FrameOptionsAttribute.cs" />
+    <Compile Include="WIF\AppStart.cs" />
+    <Compile Include="WIF\SecuritySessionSection.cs" />
+    <Compile Include="WIF\SessionConfiguration.cs" />
+    <Compile Include="WIF\SessionConfigurationModule.cs" />
+    <Compile Include="Mvc\FrameOptionsAttribute.cs" />
     <Compile Include="WIF\ITokenCacheRepository.cs" />
     <Compile Include="Metadata\CachingMetadataBasedIssuerNameRegistry.cs" />
-    <Compile Include="ResourceActionAuthorizeAttribute.cs" />
+    <Compile Include="Mvc\ResourceActionAuthorizeAttribute.cs" />
     <Compile Include="Metadata\MachineKeyMetadataCache.cs" />
     <Compile Include="WIF\PassiveModuleConfiguration.cs" />
     <Compile Include="WIF\PassiveRepositorySessionSecurityTokenCache.cs" />
