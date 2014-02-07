@@ -14,7 +14,7 @@
     </frameworkAssemblies>
 
     <dependencies>
-      <dependency id="System.IdentityModel.Tokens.Jwt" version="3.0.0" />
+      <dependency id="System.IdentityModel.Tokens.Jwt" version="3.0.2" />
       <dependency id="Thinktecture.IdentityModel.Core" version="1.0.0" />
       <dependency id="OWIN" version="1.0.0" />
       <dependency id="Microsoft.Owin" version="2.1.0" />
