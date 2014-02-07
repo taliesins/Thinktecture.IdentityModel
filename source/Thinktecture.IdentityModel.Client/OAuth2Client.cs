@@ -31,7 +31,7 @@ namespace Thinktecture.IdentityModel.Client
 			: this(address, new HttpClientHandler())
 		{ }
 
-		public OAuth2Client(Uri address, HttpMessageHandler innerHttpClientHandler)
+        public OAuth2Client(Uri address, HttpMessageHandler innerHttpClientHandler, ClientAuthenticationStyle style = ClientAuthenticationStyle.None)
 		{
 			if (innerHttpClientHandler == null)
 			{
@@ -44,7 +44,7 @@ namespace Thinktecture.IdentityModel.Client
 			};
 
 			_address = address;
-			_authenticationStyle = ClientAuthenticationStyle.None;
+            _authenticationStyle = style;
 		}
 
 		public OAuth2Client(Uri address, string clientId, string clientSecret, ClientAuthenticationStyle style = ClientAuthenticationStyle.BasicAuthentication)
