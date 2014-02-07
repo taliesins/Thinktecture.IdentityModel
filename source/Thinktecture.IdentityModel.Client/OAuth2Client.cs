@@ -31,29 +31,33 @@ namespace Thinktecture.IdentityModel.Client
 			: this(address, new HttpClientHandler())
 		{ }
 
-        public OAuth2Client(Uri address, HttpMessageHandler innerHttpClientHandler, ClientAuthenticationStyle style = ClientAuthenticationStyle.None)
-		{
-			if (innerHttpClientHandler == null)
-			{
-				throw new ArgumentNullException("innerHttpClientHandler");
-			}
+        public OAuth2Client(Uri address, HttpMessageHandler innerHttpClientHandler)
+            : this(address, innerHttpClientHandler, ClientAuthenticationStyle.None)
+        { }
 
-			_client = new HttpClient(innerHttpClientHandler)
-			{
-				BaseAddress = address
-			};
-
-			_address = address;
-            _authenticationStyle = style;
-		}
+        public OAuth2Client(Uri address, HttpMessageHandler innerHttpClientHandler, ClientAuthenticationStyle style)
+            : this(address, null, null, innerHttpClientHandler, style)
+		{ }
 
 		public OAuth2Client(Uri address, string clientId, string clientSecret, ClientAuthenticationStyle style = ClientAuthenticationStyle.BasicAuthentication)
 			: this(address, clientId, clientSecret, new HttpClientHandler(), style)
 		{ }
 
 		public OAuth2Client(Uri address, string clientId, string clientSecret, HttpMessageHandler innerHttpClientHandler, ClientAuthenticationStyle style = ClientAuthenticationStyle.BasicAuthentication)
-			: this(address, innerHttpClientHandler)
 		{
+            if (innerHttpClientHandler == null)
+            {
+                throw new ArgumentNullException("innerHttpClientHandler");
+            }
+
+            _client = new HttpClient(innerHttpClientHandler)
+            {
+                BaseAddress = address
+            };
+
+            _address = address;
+            _authenticationStyle = style;
+
 			if (style == ClientAuthenticationStyle.BasicAuthentication)
 			{
 				_client.DefaultRequestHeaders.Authorization = new BasicAuthenticationHeaderValue(clientId, clientSecret);
