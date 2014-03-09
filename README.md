@@ -1,7 +1,7 @@
 # Thinktecture IdentityModel #
 
 This is the successor to the very popular [Thinktecture.IdentityModel.45](https://github.com/thinktecture/Thinktecture.IdentityModel.45) repository. The old project has reached a certain size where it made more sense to break up the different features areas in separate assemblies and projects.
-
+ 
 The new IdentityModel consists of the following parts:
 
 ### Core ###
